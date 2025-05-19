@@ -40,7 +40,7 @@ def apply_template(examples):
 
 dataset = load_dataset(
     "json",
-    data_files="/home/xfang1/dataset/ogbn_arxiv_td/pro/*.json",
+    data_files="*.json",
     split="train"
 )
 
