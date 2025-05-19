@@ -83,9 +83,9 @@ for seed in range(10):
             for neighbor in neighbors.get(curr_node, []):
                 queue.append((neighbor, hop + 1))
 
-    titleabs = pd.read_csv('/home/xfang1/dataset/ogbn_arxiv_td/valid_dataset_origin.tsv', delimiter='\t')
+    titleabs = pd.read_csv('valid_dataset_origin.tsv', delimiter='\t')
 
-    edges = pd.read_csv('/home/xfang1/dataset/ogbn_arxiv/raw/edge.csv.gz', header=None, names=['source', 'target'], compression='gzip')
+    edges = pd.read_csv('ogbn_arxiv/raw/edge.csv.gz', header=None, names=['source', 'target'], compression='gzip')
 
     titles = dict(zip(titleabs['node_idx'], titleabs['title']))
     abstracts = dict(zip(titleabs['node_idx'], titleabs['abstract']))
@@ -128,7 +128,7 @@ for seed in range(10):
         predictions_df = pd.read_csv(f'predictions_abs_{limit}_valid_ArxivLlama.csv')
         predictions_df['PredictedLabel'] = pd.to_numeric(predictions_df['PredictedLabel'], errors='coerce')
 
-        correct_labels = pd.read_csv('/home/xfang1/dataset/ogbn_arxiv_td/valid_label.csv.gz', header=None, names=['TrueLabel'])
+        correct_labels = pd.read_csv('valid_label.csv.gz', header=None, names=['TrueLabel'])
         correct_labels['TrueLabel'] = correct_labels['TrueLabel'].astype(float)
 
         accuracy = (predictions_df['PredictedLabel'] == correct_labels['TrueLabel']).mean()
