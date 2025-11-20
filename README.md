@@ -1,6 +1,6 @@
-# Project Scripts Description
+# LLM Profiling and Fine-Tuning with Limited Neighbor Information for Node Classification on Text-Attributed Graphs
 
-This repository contains the script files for the ArxivLlama & ProductsLlama model in our paper. Below are the instructions for those files:
+This repository contains the script files for the [ArxivLlama](https://huggingface.co/xinyifang/ArxivLlama) & [ProductsLlama](https://huggingface.co/xinyifang/ProductsLlama) model in our paper. Below are the instructions for those files:
 
 ### Get the data
 
@@ -39,5 +39,6 @@ The <mark>finetune.py</mark> file is for finetuning backbone model. We used Unsl
 ### Node classification task
 
 The <mark>arxivclassifier.py</mark> and <mark>productclassifier.py</mark> files are for the node classification task.
+
 
 
